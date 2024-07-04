@@ -21,6 +21,12 @@ The Rainbow Canvas Drawing project is a fun and interactive way to explore the c
 - Oscillating line width for dynamic drawing effects.
 - Simple and intuitive interface.
 
+## Extra Features
+
+- Brush Size Selector: Uses a range input element to let users change the brush size.
+- Eraser Tool: Adds a button to switch the drawing color to white, simulating an eraser.
+- Save Button: Allows users to save their drawings as a PNG file.
+
 ## Installation
 
 To run this project locally, follow these steps:
@@ -50,11 +56,6 @@ or simply drag and drop the index.html file into your browser.
 1. Open the project in your browser.
 2. Click and drag your mouse on the canvas to draw.
 3. Observe the changing colors and line width as you draw.
-
-## Extra Features
-
-1. Brush Size Selector: Uses a range input element to let users change the brush size.
-2. Eraser Tool: Adds a button to switch the drawing color to white, simulating an eraser.
 
 ## Contributing
 
