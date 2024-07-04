@@ -1,6 +1,7 @@
 const canvas = document.querySelector("#draw");
-const brushSize = document.getElementById("brushSize");
 const ctx = canvas.getContext("2d");
+const brushSize = document.getElementById("brushSize");
+const eraser = document.getElementById("eraser");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -11,6 +12,7 @@ ctx.lineCap = "round";
 // ctx.lineWidth = 100;
 
 let isDrawing = false;
+let isEraser = false;
 let lastX = 0;
 let lastY = 0;
 let hue = 0;
@@ -21,7 +23,7 @@ function draw(e) {
 
   // console.log(e);
   ctx.lineWidth = brushSize.value;
-  ctx.strokeStyle = `hsl(${hue},100%,50%)`;
+  ctx.strokeStyle = isEraser ? "#ffffff" : `hsl(${hue},100%,50%)`;
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
   ctx.lineTo(e.offsetX, e.offsetY);
@@ -44,3 +46,8 @@ canvas.addEventListener("mousedown", (e) => {
 canvas.addEventListener("mouseup", () => (isDrawing = false));
 canvas.addEventListener("mouseout", () => (isDrawing = false));
 // brushSize.addEventListener("change",()=> );
+
+eraser.addEventListener("click", () => {
+  isEraser = !isEraser;
+  console.warn(`Is Eraser active :${isEraser}`);
+});

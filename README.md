@@ -54,6 +54,7 @@ or simply drag and drop the index.html file into your browser.
 ## Extra Features
 
 1. Brush Size Selector: Uses a range input element to let users change the brush size.
+2. Eraser Tool: Adds a button to switch the drawing color to white, simulating an eraser.
 
 ## Contributing
 
