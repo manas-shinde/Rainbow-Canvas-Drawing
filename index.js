@@ -2,6 +2,7 @@ const canvas = document.querySelector("#draw");
 const ctx = canvas.getContext("2d");
 const brushSize = document.getElementById("brushSize");
 const eraser = document.getElementById("eraser");
+const save = document.getElementById("save");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -45,9 +46,18 @@ canvas.addEventListener("mousedown", (e) => {
 });
 canvas.addEventListener("mouseup", () => (isDrawing = false));
 canvas.addEventListener("mouseout", () => (isDrawing = false));
-// brushSize.addEventListener("change",()=> );
 
+// Event Listener for Eraser
 eraser.addEventListener("click", () => {
   isEraser = !isEraser;
   console.warn(`Is Eraser active :${isEraser}`);
+});
+
+// Event Listener for Saving the drawing
+save.addEventListener("click", () => {
+  const dataUrl = canvas.toDataURL("image/png");
+  const link = document.createElement("a");
+  link.href = dataUrl;
+  link.download = "drawing.png";
+  link.click();
 });
